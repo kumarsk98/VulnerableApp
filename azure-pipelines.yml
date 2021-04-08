@@ -26,4 +26,4 @@ steps:
     serviceConnectionEndpoint: 'SKsnyk'
     testType: 'app'
     monitorOnBuild: true
-    failOnIssues: true
+    failOnIssues: false
