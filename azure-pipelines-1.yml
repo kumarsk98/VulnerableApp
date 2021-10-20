@@ -21,9 +21,15 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'build'
-- task: SnykSecurityScan@1
+
+- task: Bash@3
   inputs:
-    serviceConnectionEndpoint: 'SKsnyk'
-    testType: 'app'
-    monitorWhen: 'always'
-    failOnIssues: false
+    targetType: 'inline'
+    script: |
+      npm install -g snyk
+      snyk auth 'af5913c5-c15f-40bc-965d-ff80b2429918'
+      snyk code test
+  displayName: "Snyk Code Test"
+
+
+
