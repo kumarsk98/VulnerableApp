@@ -27,7 +27,6 @@ steps:
     targetType: 'inline'
     script: |
       sudo npm install -g snyk
-#sudo npm install snyk-to-html -g
       snyk auth 'af5913c5-c15f-40bc-965d-ff80b2429918'
       snyk code test --json
       snyk code monitor
