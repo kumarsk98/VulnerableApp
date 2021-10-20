@@ -28,7 +28,7 @@ steps:
     script: |
       sudo npm install -g snyk
       snyk auth 'af5913c5-c15f-40bc-965d-ff80b2429918'
-      snyk code test --json
+      snyk code test 
       snyk code monitor
   displayName: "Snyk Code Test"
 
