@@ -22,9 +22,13 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'build'
 
-- task: SnykSecurityScan@1
+- task: Bash@3
   inputs:
-    serviceConnectionEndpoint: 'Snyk'
-    testType: 'app'
-    monitorOnBuild: true
-    failOnIssues: true
+    targetType: 'inline'
+    script: |
+      sudo npm install -g snyk
+      snyk auth '1ed7be28-f5b8-4815-9ea9-384fe9b9ccaa'
+      snyk code test 
+      snyk code monitor
+  displayName: "Snyk Code Test"
+   
