@@ -31,4 +31,10 @@ steps:
       snyk code test 
       snyk code monitor
   displayName: "Snyk Code Test"
-   
+  
+- task: OwaspZapScan@2
+  inputs:
+    ZapApiUrl: 'http://locahost:8080'
+    ZapApiKey: 'uitlgip34id33pcbnk7v1tpjsk'
+    TargetUrl: 'http://google.com'
+    ExecuteSpiderScan: true
