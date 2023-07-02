@@ -34,7 +34,7 @@ steps:
   
 - task: OwaspZapScan@2
   inputs:
-    ZapApiUrl: 'http://locahost:8080'
+    ZapApiUrl: 'http://l27.0.0.1:8080'
     ZapApiKey: 'uitlgip34id33pcbnk7v1tpjsk'
     TargetUrl: 'http://google.com'
     ExecuteSpiderScan: true
